@@ -4,7 +4,7 @@ using System.Configuration;
 using System.IO;
 using Microsoft.Win32;
 
-namespace XCoin.LIB.Configuration
+namespace Bithumb.LIB.Configuration
 {
     /// <summary>
     /// 

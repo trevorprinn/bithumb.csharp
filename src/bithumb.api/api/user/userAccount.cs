@@ -1,4 +1,4 @@
-﻿namespace XCoin.API.Info
+﻿namespace Bithumb.API.Info
 {
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
@@ -40,7 +40,7 @@
             get;
             set;
         }
-   }
+    }
 
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보

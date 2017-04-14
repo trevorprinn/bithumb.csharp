@@ -7,8 +7,8 @@
     <ProjectGuid>{CBE9655B-659C-4B6F-BC62-889BD9212685}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XCoin.API</RootNamespace>
-    <AssemblyName>XCoin.API</AssemblyName>
+    <RootNamespace>Bithumb.API</RootNamespace>
+    <AssemblyName>Bithumb.API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -65,32 +65,30 @@
     <Compile Include="lib\types\dealerType.cs" />
     <Compile Include="lib\types\orderType.cs" />
     <Compile Include="lib\types\orderTypeConverter.cs" />
-    <Compile Include="lib\webClient.cs" />
-    <Compile Include="lib\webRequest.cs" />
+    <Compile Include="lib\XWebClient.cs" />
+    <Compile Include="lib\XApiRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="api\apiClient.cs" />
-    <Compile Include="api\apiResult.cs" />
-    <Compile Include="api\info\infoApi.cs" />
-    <Compile Include="api\info\userAccount.cs" />
-    <Compile Include="api\info\userBalance.cs" />
-    <Compile Include="api\info\userOrderDetail.cs" />
-    <Compile Include="api\info\userOrders.cs" />
-    <Compile Include="api\info\userTicker.cs" />
-    <Compile Include="api\info\userTransactions.cs" />
-    <Compile Include="api\info\userWalletAddress.cs" />
-    <Compile Include="api\models\analysisBuyData.cs" />
-    <Compile Include="api\models\analysisSellData.cs" />
+    <Compile Include="api\XApiClient.cs" />
+    <Compile Include="api\XApiResult.cs" />
+    <Compile Include="api\user\userApi.cs" />
+    <Compile Include="api\user\userAccount.cs" />
+    <Compile Include="api\user\userBalance.cs" />
+    <Compile Include="api\user\userOrderDetail.cs" />
+    <Compile Include="api\user\userOrders.cs" />
+    <Compile Include="api\user\userTicker.cs" />
+    <Compile Include="api\user\userTransactions.cs" />
+    <Compile Include="api\user\userWalletAddress.cs" />
     <Compile Include="api\public\publicApi.cs" />
     <Compile Include="api\public\publicOrderBook.cs" />
     <Compile Include="api\public\publicTicker.cs" />
     <Compile Include="api\public\publicTransactions.cs" />
     <Compile Include="api\trade\tradeApi.cs" />
     <Compile Include="api\trade\tradeCancel.cs" />
-    <Compile Include="api\trade\tradeDeposit.cs" />
+    <Compile Include="api\trade\tradeKrwDeposit.cs" />
     <Compile Include="api\trade\tradeMarket.cs" />
     <Compile Include="api\trade\tradePlace.cs" />
     <Compile Include="api\trade\tradeWithdrawal.cs" />
-    <Compile Include="api\webApi.cs" />
+    <Compile Include="api\XWebApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

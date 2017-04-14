@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XCoin.LIB.Models
+namespace Bithumb.LIB.Models
 {
     /// <summary>
     /// 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace XCoin.API.Info
+﻿namespace Bithumb.API.Info
 {
     /// <summary>
     /// 
@@ -80,7 +76,7 @@ namespace XCoin.API.Info
             get;
             set;
         }
-
+        
         /// <summary>
         /// 
         /// </summary>

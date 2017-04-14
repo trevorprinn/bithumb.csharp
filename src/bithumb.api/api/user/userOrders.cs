@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace XCoin.API.Info
+namespace Bithumb.API.Info
 {
     /// <summary>
     /// 
@@ -18,7 +18,7 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 주문 화페단위
+        /// 주문 화페단위 (BTC or ETH)
         /// </summary>
         public string order_currency
         {
@@ -63,7 +63,7 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 거래요청 BTC
+        /// 거래요청 Currency (BTC or ETH)
         /// </summary>
         public decimal units
         {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RestSharp.Serializers;
 
-namespace XCoin.LIB.Serialize
+namespace Bithumb.LIB.Serialize
 {
     /// <summary>
     /// Default JSON serializer for request bodies

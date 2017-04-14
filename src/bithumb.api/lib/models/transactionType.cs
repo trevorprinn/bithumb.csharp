@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace XCoin.LIB.Models
+namespace Bithumb.LIB.Models
 {
     /// <summary>
     /// 

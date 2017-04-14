@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XCoin.LIB.Configuration
+namespace Bithumb.LIB.Configuration
 {
     /// <summary>
     /// 

@@ -2,7 +2,7 @@
 using RestSharp.Deserializers;
 using RestSharp;
 
-namespace XCoin.LIB.Serialize
+namespace Bithumb.LIB.Serialize
 {
     /// <summary>
     /// Default JSON serializer for request bodies

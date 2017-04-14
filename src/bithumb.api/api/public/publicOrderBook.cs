@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace XCoin.API.Public
+namespace Bithumb.API.Public
 {
     /// <summary>
     /// 

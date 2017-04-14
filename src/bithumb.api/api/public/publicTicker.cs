@@ -1,4 +1,4 @@
-﻿namespace XCoin.API.Public
+﻿namespace Bithumb.API.Public
 {
     /// <summary>
     /// 

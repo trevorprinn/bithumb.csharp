@@ -1,4 +1,4 @@
-﻿namespace XCoin.API
+﻿namespace Bithumb.API
 {
     /// <summary>
     /// 
@@ -7,8 +7,6 @@
     {
         public XApiResult()
         {
-            this.result = false;
-
             this.status = -1;
             this.message = "";
         }
@@ -26,15 +24,6 @@
         /// 결과 메시지
         /// </summary>
         public string message
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool result
         {
             get;
             set;

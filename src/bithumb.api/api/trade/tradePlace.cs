@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace XCoin.API.Trade
+namespace Bithumb.API.Trade
 {
     /// <summary>
     /// 
@@ -28,7 +26,7 @@ namespace XCoin.API.Trade
         }
 
         /// <summary>
-        /// 1BTC당 체결가
+        /// 1Currency당 체결가 (BTC or ETH)
         /// </summary>
         public decimal price
         {

@@ -5,15 +5,15 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using RestSharp;
-using XCoin.LIB.Configuration;
-using XCoin.LIB.Serialize;
+using Bithumb.LIB.Configuration;
+using Bithumb.LIB.Serialize;
 
-namespace XCoin.LIB
+namespace Bithumb.LIB
 {
     /// <summary>
     /// 
     /// </summary>
-    public class WebRequest
+    public class XApiRequest
     {
         private const string __content_type = "application/json";
         private const string __user_agent = "btc-trading/5.2.2017.01";
@@ -21,7 +21,7 @@ namespace XCoin.LIB
         /// <summary>
         /// 
         /// </summary>
-        public WebRequest()
+        public XApiRequest()
         {
             if (ServicePointManager.ServerCertificateValidationCallback == null)
                 ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace XCoin.API.Public
+namespace Bithumb.API.Public
 {
     /// <summary>
     /// https://api.bithumb.com/
@@ -28,15 +28,15 @@ namespace XCoin.API.Public
             __secret_key = secret_key;
         }
 
-        private ApiClient __api_client = null;
+        private XApiClient __public_client = null;
 
-        private ApiClient ApiClient
+        private XApiClient PublicClient
         {
             get
             {
-                if (__api_client == null)
-                    __api_client = new ApiClient(__connect_key, __secret_key);
-                return __api_client;
+                if (__public_client == null)
+                    __public_client = new XApiClient(__connect_key, __secret_key);
+                return __public_client;
             }
         }
 
@@ -45,12 +45,9 @@ namespace XCoin.API.Public
         /// </summary>
         /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<PublicTicker> GetPublicTicker(string currency = "BTC")
+        public async Task<PublicTicker> Ticker(string currency = "BTC")
         {
-            var _result = await ApiClient.CallApiGetAsync<PublicTicker>($"/public/ticker/{currency}");
-            _result.result = (_result.status == 0);
-
-            return _result;
+            return await PublicClient.CallApiGetAsync<PublicTicker>($"/public/ticker/{currency}");
         }
 
         /// <summary>
@@ -60,7 +57,7 @@ namespace XCoin.API.Public
         /// <param name="group_orders">Value : 0 또는 1 (Default : 1)</param>
         /// <param name="count">Value : 1 ~ 50 (Default : 20)</param>
         /// <returns></returns>
-        public async Task<PublicOrderBook> GetOrderBook(string currency = "BTC", int group_orders = 1, int count = 20)
+        public async Task<PublicOrderBook> OrderBook(string currency = "BTC", int group_orders = 1, int count = 20)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -68,10 +65,7 @@ namespace XCoin.API.Public
                 _params.Add("count", count);
             }
 
-            var _result = await ApiClient.CallApiGetAsync<PublicOrderBook>($"/public/orderbook/{currency}", _params);
-            _result.result = (_result.status == 0);
-
-            return _result;
+            return await PublicClient.CallApiGetAsync<PublicOrderBook>($"/public/orderbook/{currency}", _params);
         }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace XCoin.API.Public
         /// <param name="offset">Value : 0 ~ (Default : 0)</param>
         /// <param name="count">Value : 1 ~ 100 (Default : 20)</param>
         /// <returns></returns>
-        public async Task<PublicTransactions> GetTransactions(string currency = "BTC", int offset = 0, int count = 50)
+        public async Task<PublicTransactions> RecentTransactions(string currency = "BTC", int offset = 0, int count = 50)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -89,10 +83,7 @@ namespace XCoin.API.Public
                 _params.Add("count", count);
             }
 
-            var _result = await ApiClient.CallApiGetAsync<PublicTransactions>($"/public/recent_transactions/{currency}", _params);
-            _result.result = (_result.status == 0);
-
-            return _result;
+            return await PublicClient.CallApiGetAsync<PublicTransactions>($"/public/recent_transactions/{currency}", _params);
         }
     }
 }

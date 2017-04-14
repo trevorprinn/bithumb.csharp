@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using XCoin.LIB;
-using XCoin.LIB.Configuration;
-using XCoin.LIB.Models;
+using Bithumb.LIB;
+using Bithumb.LIB.Configuration;
+using Bithumb.LIB.Models;
 
-namespace XCoin.API
+namespace Bithumb.API
 {
     /// <summary>
     /// 
     /// </summary>
-    public partial class WebApi
+    public partial class XWebApi
     {
-        private WebClient __xcoin_web_client = null;
+        private XWebClient __xcoin_web_client = null;
 
-        private WebClient XCoinWebClient
+        private XWebClient XCoinWebClient
         {
             get
             {
                 if (__xcoin_web_client == null)
-                    __xcoin_web_client = new WebClient("https://www.bithumb.com/");
+                    __xcoin_web_client = new XWebClient("https://www.bithumb.com/");
                 return __xcoin_web_client;
             }
         }

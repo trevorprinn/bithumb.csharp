@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Bithumb.LIB.Configuration;
+using Bithumb.LIB.Queue;
+using Bithumb.LIB.Types;
 using Newtonsoft.Json;
-using XCoin.LIB.Configuration;
-using XCoin.LIB.Queue;
-using XCoin.LIB.Types;
 
-namespace XCoin.API.Public
+namespace Bithumb.API.Public
 {
     /// <summary>
     /// 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace XCoin.LIB.Models
+namespace Bithumb.LIB.Models
 {
     /// <summary>
     /// 

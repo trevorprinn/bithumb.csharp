@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XCoin.Sample.Core
+namespace Bithumb.Sample.Core
 {
     class Program
     {

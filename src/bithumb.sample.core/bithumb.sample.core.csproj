@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <AssemblyName>XCoin.Sample.Core</AssemblyName>
-    <RootNamespace>XCoin.Sample.Core</RootNamespace>
+    <AssemblyName>Bithumb.Sample.Core</AssemblyName>
+    <RootNamespace>Bithumb.Sample.Core</RootNamespace>
   </PropertyGroup>
 
 </Project>

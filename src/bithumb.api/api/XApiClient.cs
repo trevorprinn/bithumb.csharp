@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
-using XCoin.LIB;
+using Bithumb.LIB;
 
-namespace XCoin.API
+namespace Bithumb.API
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ApiClient : WebRequest, IDisposable
+    public class XApiClient : XApiRequest, IDisposable
     {
         private const string __api_url = "https://api.bithumb.com";
 
@@ -20,7 +20,7 @@ namespace XCoin.API
         /// <summary>
         /// 
         /// </summary>
-        public ApiClient(string connect_key, string secret_key)
+        public XApiClient(string connect_key, string secret_key)
             : base()
         {
             __connect_key = connect_key;

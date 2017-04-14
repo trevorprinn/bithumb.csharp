@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 #pragma warning disable 1589, 1591
 
-namespace XCoin.LIB.Configuration
+namespace Bithumb.LIB.Configuration
 {
     /// <summary>
     /// 

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using XCoin.LIB.Types;
+using Bithumb.LIB.Types;
 
-namespace XCoin.LIB.Queue
+namespace Bithumb.LIB.Queue
 {
     /// <summary>
     /// 

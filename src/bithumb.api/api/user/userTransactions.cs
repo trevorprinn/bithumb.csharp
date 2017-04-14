@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace XCoin.API.Info
+namespace Bithumb.API.Info
 {
     /// <summary>
     /// 회원 거래 내역
@@ -28,7 +26,7 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 거래 BTC 수량 (BTC변동)
+        /// 거래 Currency 수량 (BTC or ETH)
         /// </summary>
         public string units
         {
@@ -37,16 +35,7 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 거래 후 BTC 잔액 (BTC잔액)
-        /// </summary>
-        public decimal btc_remain
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 거래금액 (KRW변동)
+        /// 거래금액
         /// </summary>
         public decimal price
         {
@@ -55,16 +44,7 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 거래 후 KRW 잔액 (KRW잔액)
-        /// </summary>
-        public decimal krw_remain
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 1BTC당 거래금액 (KRW체결)
+        /// 1Currency당 거래금액 (KRW)
         /// </summary>
         public decimal btc1krw
         {
@@ -73,9 +53,45 @@ namespace XCoin.API.Info
         }
 
         /// <summary>
-        /// 거래수수료 (수수료)
+        /// 1Currency당 거래금액 (ETH)
+        /// </summary>
+        public decimal eth1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래수수료
         /// </summary>
         public string fee
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 후 BTC 잔액
+        /// </summary>
+        public decimal btc_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 후 ETH 잔액
+        /// </summary>
+        public decimal eth_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 후 KRW 잔액
+        /// </summary>
+        public decimal krw_remain
         {
             get;
             set;

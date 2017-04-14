@@ -5,17 +5,17 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
-namespace XCoin.LIB
+namespace Bithumb.LIB
 {
     /// <summary>
     /// 
     /// </summary>
-    public class WebClient : WebRequest, IDisposable
+    public class XWebClient : XApiRequest, IDisposable
     {
         /// <summary>
         /// 
         /// </summary>
-        public WebClient(string web_api_url) 
+        public XWebClient(string web_api_url) 
             : base()
         {
             this.WebApiUrl = web_api_url;

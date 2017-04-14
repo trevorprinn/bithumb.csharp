@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace XCoin.API.Trade
+namespace Bithumb.API.Trade
 {
     /// <summary>
-    /// 
+    /// 시장가 구매
     /// </summary>
     public class TradeMarketData
     {
@@ -19,7 +17,7 @@ namespace XCoin.API.Trade
         }
 
         /// <summary>
-        /// 총 매도/매수 수량(수수료 포함)
+        /// 총 구매/판매 수량(수수료 포함)
         /// </summary>
         public decimal units
         {
@@ -28,7 +26,7 @@ namespace XCoin.API.Trade
         }
 
         /// <summary>
-        /// 1BTC당 KRW 시세
+        /// 1Currency당 KRW 시세 (BTC or ETH)
         /// </summary>
         public decimal price
         {
@@ -37,7 +35,7 @@ namespace XCoin.API.Trade
         }
 
         /// <summary>
-        /// 매도/매수 금액(KRW) 수수료 포함
+        /// 구매/판매 KRW
         /// </summary>
         public decimal total
         {
@@ -46,7 +44,7 @@ namespace XCoin.API.Trade
         }
 
         /// <summary>
-        /// 구매 수수료
+        /// 구매/판매 수수료
         /// </summary>
         public decimal fee
         {
@@ -61,7 +59,7 @@ namespace XCoin.API.Trade
     public class TradeMarket : ApiResult<List<TradeMarketData>>
     {
         /// <summary>
-        /// 주문 ID
+        /// 주문 번호
         /// </summary>
         public string order_id
         {

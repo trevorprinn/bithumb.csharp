@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace XCoin.LIB.Configuration
+namespace Bithumb.LIB.Configuration
 {
     /// <summary>
     /// 로그처리와 관련된 Server Library Class
