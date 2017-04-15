@@ -10,7 +10,7 @@ namespace Bithumb.API
     /// <summary>
     /// 
     /// </summary>
-    public class XApiClient : XApiRequest, IDisposable
+    public class XApiClient : OApiRequest, IDisposable
     {
         private const string __api_url = "https://api.bithumb.com";
 

@@ -10,12 +10,12 @@ namespace Bithumb.LIB
     /// <summary>
     /// 
     /// </summary>
-    public class XWebClient : XApiRequest, IDisposable
+    public class OWebClient : OApiRequest, IDisposable
     {
         /// <summary>
         /// 
         /// </summary>
-        public XWebClient(string web_api_url) 
+        public OWebClient(string web_api_url) 
             : base()
         {
             this.WebApiUrl = web_api_url;
@@ -37,7 +37,7 @@ namespace Bithumb.LIB
         /// <param name="endpoint"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async Task<List<JArray>> CallApi(string endpoint, Dictionary<string, object> args = null)
+        public async Task<List<JArray>> CallApiAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = CreateJsonRequest(endpoint, Method.GET);
             {
@@ -74,7 +74,7 @@ namespace Bithumb.LIB
         /// <param name="endpoint"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async Task<T> CallApi<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
+        public async Task<T> CallApiAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
         {
             var _request = CreateJsonRequest(endpoint, Method.POST);
             {
@@ -111,7 +111,7 @@ namespace Bithumb.LIB
         /// <param name="endpoint"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async Task<T> CallApiGet<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
+        public async Task<T> CallApiGetAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
         {
             var _request = CreateJsonRequest(endpoint, Method.GET);
             {

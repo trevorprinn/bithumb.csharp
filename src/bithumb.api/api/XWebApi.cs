@@ -13,14 +13,14 @@ namespace Bithumb.API
     /// </summary>
     public partial class XWebApi
     {
-        private XWebClient __xcoin_web_client = null;
+        private OWebClient __xcoin_web_client = null;
 
-        private XWebClient XCoinWebClient
+        private OWebClient XCoinWebClient
         {
             get
             {
                 if (__xcoin_web_client == null)
-                    __xcoin_web_client = new XWebClient("https://www.bithumb.com/");
+                    __xcoin_web_client = new OWebClient("https://www.bithumb.com/");
                 return __xcoin_web_client;
             }
         }
@@ -38,7 +38,7 @@ namespace Bithumb.API
                 _params.Add("key", UnixTime.NowMilli.ToString());
             }
 
-            var _values = await XCoinWebClient.CallApi("/resources/csv/xcoinTrade_minute.json", _params);
+            var _values = await XCoinWebClient.CallApiAsync("/resources/csv/xcoinTrade_minute.json", _params);
             _result.AddRange(
                 _values
                     .Select(x => new PeriodData()
@@ -71,7 +71,7 @@ namespace Bithumb.API
                 _params.Add("key", DateTime.Now.ToString("yyyyMMdd"));
             }
 
-            var _values = await XCoinWebClient.CallApi("/resources/csv/xcoinTrade.json", _params);
+            var _values = await XCoinWebClient.CallApiAsync("/resources/csv/xcoinTrade.json", _params);
             _result.AddRange(
                 _values
                     .Select(x => new PeriodData()
@@ -102,7 +102,7 @@ namespace Bithumb.API
                 _params.Add("_", UnixTime.NowMilli);
             }
 
-            return await XCoinWebClient.CallApi<CurrencyRates>("/resources/csv/CurrencyRate.json", _params);
+            return await XCoinWebClient.CallApiAsync<CurrencyRates>("/resources/csv/CurrencyRate.json", _params);
         }
     }
 }
