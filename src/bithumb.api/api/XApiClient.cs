@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
 using Bithumb.LIB;
+using Bithumb.LIB.Configuration;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace Bithumb.API
 {
@@ -25,6 +28,32 @@ namespace Bithumb.API
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
+        }
+
+        protected Dictionary<string, object> GetHttpHeaders(string endpoint, Dictionary<string, object> rgData, string apiKey, string apiSecret)
+        {
+            var _nonce = UnixTime.NowMilli.ToString();
+            var _data = EncodeURIComponent(rgData);
+            var _message = String.Format("{0};{1};{2}", endpoint, _data, _nonce);
+
+            var _secretKey = Encoding.UTF8.GetBytes(apiSecret);
+            var _hmac = new HMACSHA512(_secretKey);
+            _hmac.Initialize();
+
+            var _bytes = Encoding.UTF8.GetBytes(_message);
+            var _rawHmac = _hmac.ComputeHash(_bytes);
+
+            var _encoded = EncodeHex(_rawHmac);
+            var _signature = Convert.ToBase64String(_encoded);
+
+            var _headers = new Dictionary<string, object>();
+            {
+                _headers.Add("Api-Key", apiKey);
+                _headers.Add("Api-Sign", _signature);
+                _headers.Add("Api-Nonce", _nonce);
+            }
+
+            return _headers;
         }
 
         /// <summary>
