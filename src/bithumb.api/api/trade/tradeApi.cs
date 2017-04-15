@@ -54,7 +54,7 @@ namespace Bithumb.API.Trade
                 _params.Add("misu", misu);
             }
 
-            return await TradeClient.CallApiAsync<TradePlace>("/trade/place", _params);
+            return await TradeClient.CallApiPostAsync<TradePlace>("/trade/place", _params);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Bithumb.API.Trade
                 _params.Add("currency", currency);
             }
 
-            return await TradeClient.CallApiAsync<TradeCancel>("/trade/cancel", _params);
+            return await TradeClient.CallApiPostAsync<TradeCancel>("/trade/cancel", _params);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Bithumb.API.Trade
                 _params.Add("currency", currency);
             }
 
-            return await TradeClient.CallApiAsync<TradeWithdrawal>("/trade/btc_withdrawal", _params);
+            return await TradeClient.CallApiPostAsync<TradeWithdrawal>("/trade/btc_withdrawal", _params);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Bithumb.API.Trade
         /// <returns></returns>
         public async Task<TradeKrwDeposit> KrwDeposit()
         {
-            return await TradeClient.CallApiAsync<TradeKrwDeposit>("/trade/krw_deposit");
+            return await TradeClient.CallApiPostAsync<TradeKrwDeposit>("/trade/krw_deposit");
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Bithumb.API.Trade
                 _params.Add("price", price);
             }
 
-            return await TradeClient.CallApiAsync<TradeWithdrawal>("/trade/krw_withdrawal", _params);
+            return await TradeClient.CallApiPostAsync<TradeWithdrawal>("/trade/krw_withdrawal", _params);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Bithumb.API.Trade
                 _params.Add("currency", currency);
             }
 
-            return await TradeClient.CallApiAsync<TradeMarket>("/trade/market_buy", _params);
+            return await TradeClient.CallApiPostAsync<TradeMarket>("/trade/market_buy", _params);
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Bithumb.API.Trade
                 _params.Add("currency", currency);
             }
 
-            return await TradeClient.CallApiAsync<TradeMarket>("/trade/market_sell", _params);
+            return await TradeClient.CallApiPostAsync<TradeMarket>("/trade/market_sell", _params);
         }
     }
 }

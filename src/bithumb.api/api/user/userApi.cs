@@ -44,7 +44,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserAccount>("/info/account", _params);
+            return await UserClient.CallApiPostAsync<UserAccount>("/info/account", _params);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserBalance>("/info/balance", _params);
+            return await UserClient.CallApiPostAsync<UserBalance>("/info/balance", _params);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserWalletAddress>("/info/wallet_address", _params);
+            return await UserClient.CallApiPostAsync<UserWalletAddress>("/info/wallet_address", _params);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Bithumb.API.Info
                 _params.Add("payment_currency", payment_currency);
             }
 
-            return await UserClient.CallApiAsync<UserTicker>("/info/ticker", _params);
+            return await UserClient.CallApiPostAsync<UserTicker>("/info/ticker", _params);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserOrders>("/info/orders", _params);
+            return await UserClient.CallApiPostAsync<UserOrders>("/info/orders", _params);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserTransactions>("/info/user_transactions", _params);
+            return await UserClient.CallApiPostAsync<UserTransactions>("/info/user_transactions", _params);
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Bithumb.API.Info
                 _params.Add("currency", currency);
             }
 
-            return await UserClient.CallApiAsync<UserOrderDetail>("/info/order_detail", _params);
+            return await UserClient.CallApiPostAsync<UserOrderDetail>("/info/order_detail", _params);
         }
     }
 }
