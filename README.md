@@ -10,7 +10,7 @@ We promise to continuously improve.
 
 ## License
 
-Read [LICENSE](license)
+Read [LICENSE](LICENSE)
 
 ## Donations
 
