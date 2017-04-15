@@ -16,4 +16,4 @@ Read [LICENSE](license)
 
 Since I spent several days developing and testing this kit I would appreciate any donations.
 
-BTC: 13QxaR9LrKmdDox14psjdgtGse86rhj7PU
+BTC: 1FP3qopPnizeXafNkiXs1dTF85dkNP8fh4
