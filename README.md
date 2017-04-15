@@ -1,6 +1,6 @@
 # Bithumb C# API SDK
 
-This SDK is intended to develop bithumb's API for bit coin trading with C #.
+This SDK is intended to develop bithumb's API for bitcoin/ethereum trading with C#.
 
 This SDK was not developed by a bithumb employee.
 
@@ -10,7 +10,7 @@ We promise to continuously improve.
 
 ## License
 
-Read license
+Read [LICENSE](license)
 
 ## Donations
 
