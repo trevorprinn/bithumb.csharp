@@ -10,7 +10,7 @@ namespace Bithumb.LIB
     /// <summary>
     /// 
     /// </summary>
-    public class OWebClient : OApiRequest, IDisposable
+    public class OWebClient : OWebRequest, IDisposable
     {
         /// <summary>
         /// 

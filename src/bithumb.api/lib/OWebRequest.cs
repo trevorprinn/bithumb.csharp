@@ -10,7 +10,7 @@ namespace Bithumb.LIB
     /// <summary>
     /// 
     /// </summary>
-    public class OApiRequest
+    public class OWebRequest
     {
         private const string __content_type = "application/json";
         private const string __user_agent = "btc-trading/5.2.2017.01";
@@ -18,7 +18,7 @@ namespace Bithumb.LIB
         /// <summary>
         /// 
         /// </summary>
-        public OApiRequest()
+        public OWebRequest()
         {
             if (ServicePointManager.ServerCertificateValidationCallback == null)
                 ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);

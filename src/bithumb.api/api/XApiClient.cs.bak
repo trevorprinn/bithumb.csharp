@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
-using Bithumb.LIB;
-using Bithumb.LIB.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
+using Bithumb.LIB;
+using Bithumb.LIB.Configuration;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace Bithumb.API
 {
     /// <summary>
     /// 
     /// </summary>
-    public class XApiClient : OWebRequest, IDisposable
+    public class XApiClient : OApiRequest, IDisposable
     {
         private const string __api_url = "https://api.bithumb.com";
 
@@ -82,9 +82,6 @@ namespace Bithumb.API
                 var _headers = GetHttpHeaders(endpoint, _params, __connect_key, __secret_key);
                 foreach (var h in _headers)
                     _request.AddHeader(h.Key, h.Value.ToString());
-
-                foreach (var a in _params)
-                    _request.AddParameter(a.Key, a.Value);
             }
 
             var _client = CreateJsonClient(__api_url);
