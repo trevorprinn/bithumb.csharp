@@ -50,15 +50,15 @@ namespace Bithumb.Sample
             if (_ticker.status == 0)
                 Console.WriteLine(_ticker.data.units_traded);
 
-            var _orders = await __info_api.Orders(currency: "ETH");
+            var _orders = await __info_api.Orders("ETH");
             if (_orders.status == 0)
                 Console.WriteLine(_orders.data.Count);
 
-            var _order_detail = await __info_api.OrderDetail("order_id", "ask", "ETH");
+            var _order_detail = await __info_api.OrderDetail("ETH", "order_id", "ask");
             if (_order_detail.status == 0)
                 Console.WriteLine(_order_detail.data.Count);
 
-            var _user_transactions = await __info_api.UserTransactions(currency: "ETH");
+            var _user_transactions = await __info_api.UserTransactions("ETH");
             if (_user_transactions.status == 0)
                 Console.WriteLine(_user_transactions.data.Count);
         }
@@ -74,11 +74,11 @@ namespace Bithumb.Sample
             if (_place.status == 0)
                 Console.WriteLine(_place.data.Count);
 
-            var _cancel = await __trade_api.Cancel("order_id", "bid", "ETH");
+            var _cancel = await __trade_api.Cancel("ETH", "order_id", "bid");
             if (_cancel.status == 0)
                 Console.WriteLine(_cancel.status);
 
-            var _btc_withdrawal = await __trade_api.BtcWithdrawal(0.1m, "address", "ETH");
+            var _btc_withdrawal = await __trade_api.BtcWithdrawal("ETH", 0.1m, "address");
             if (_btc_withdrawal.status == 0)
                 Console.WriteLine(_btc_withdrawal.status);
 
@@ -90,11 +90,11 @@ namespace Bithumb.Sample
             if (_krw_withdrawal.status == 0)
                 Console.WriteLine(_krw_withdrawal.status);
 
-            var _market_buy = await __trade_api.MarketBuy(0.1m, "ETH");
+            var _market_buy = await __trade_api.MarketBuy("ETH", 0.1m);
             if (_market_buy.status == 0)
                 Console.WriteLine(_market_buy.order_id);
 
-            var _market_sell = await __trade_api.MarketSell(0.1m, "ETH");
+            var _market_sell = await __trade_api.MarketSell("ETH", 0.1m);
             if (_market_sell.status == 0)
                 Console.WriteLine(_market_sell.order_id);
         }

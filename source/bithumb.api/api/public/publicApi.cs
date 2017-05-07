@@ -45,7 +45,7 @@ namespace Bithumb.API.Public
         /// </summary>
         /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<PublicTicker> Ticker(string currency = "BTC")
+        public async Task<PublicTicker> Ticker(string currency)
         {
             return await PublicClient.CallApiGetAsync<PublicTicker>($"/public/ticker/{currency}");
         }
@@ -57,7 +57,7 @@ namespace Bithumb.API.Public
         /// <param name="group_orders">Value : 0 또는 1 (Default : 1)</param>
         /// <param name="count">Value : 1 ~ 50 (Default : 20)</param>
         /// <returns></returns>
-        public async Task<PublicOrderBook> OrderBook(string currency = "BTC", int group_orders = 1, int count = 20)
+        public async Task<PublicOrderBook> OrderBook(string currency, int group_orders = 1, int count = 20)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -75,7 +75,7 @@ namespace Bithumb.API.Public
         /// <param name="offset">Value : 0 ~ (Default : 0)</param>
         /// <param name="count">Value : 1 ~ 100 (Default : 20)</param>
         /// <returns></returns>
-        public async Task<PublicTransactions> RecentTransactions(string currency = "BTC", int offset = 0, int count = 50)
+        public async Task<PublicTransactions> RecentTransactions(string currency, int offset = 0, int count = 50)
         {
             var _params = new Dictionary<string, object>();
             {

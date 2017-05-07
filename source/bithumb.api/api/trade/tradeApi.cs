@@ -42,7 +42,7 @@ namespace Bithumb.API.Trade
         /// <param name="payment_currency">KRW (기본값)</param>
         /// <param name="misu">신용거래(Y : 사용, N : 일반) – 추후 제공</param>
         /// <returns></returns>
-        public async Task<TradePlace> Place(decimal units, decimal price, string type, string order_currency = "BTC", string payment_currency = "KRW", string misu = "N")
+        public async Task<TradePlace> Place(decimal units, decimal price, string type, string order_currency, string payment_currency = "KRW", string misu = "N")
         {
             var _params = new Dictionary<string, object>();
             {
@@ -60,17 +60,17 @@ namespace Bithumb.API.Trade
         /// <summary>
         /// bithumb 회원 판/구매 거래 취소
         /// </summary>
+        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
         /// <param name="type">거래유형 (bid : 구매, ask : 판매)</param>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<TradeCancel> Cancel(string order_id, string type, string currency = "BTC")
+        public async Task<TradeCancel> Cancel(string currency, string order_id, string type)
         {
             var _params = new Dictionary<string, object>();
             {
+                _params.Add("currency", currency);
                 _params.Add("order_id", order_id);
                 _params.Add("type", type);
-                _params.Add("currency", currency);
             }
 
             return await TradeClient.CallApiPostAsync<TradeCancel>("/trade/cancel", _params);
@@ -79,17 +79,17 @@ namespace Bithumb.API.Trade
         /// <summary>
         /// bithumb 회원 btc 출금(회원등급에 따른 BTC or ETH 출금)
         /// </summary>
+        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <param name="units">BTC 출금 하고자 하는 수량(BTC: 0.01 ~ 회원등급수량 or ETH: 0.1 ~ 회원등급수량)</param>
         /// <param name="address">	Currency 출금 주소 (BTC or ETH)</param>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<TradeWithdrawal> BtcWithdrawal(decimal units, string address, string currency = "BTC")
+        public async Task<TradeWithdrawal> BtcWithdrawal(string currency, decimal units, string address)
         {
             var _params = new Dictionary<string, object>();
             {
+                _params.Add("currency", currency);
                 _params.Add("units", units);
                 _params.Add("address", address);
-                _params.Add("currency", currency);
             }
 
             return await TradeClient.CallApiPostAsync<TradeWithdrawal>("/trade/btc_withdrawal", _params);
@@ -126,15 +126,15 @@ namespace Bithumb.API.Trade
         /// <summary>
         /// 시장가 구매
         /// </summary>
-        /// <param name="units">주문 수량 (BTC: 0.001 ~ 999.99999999 | ETH: 0.1 ~ 10,000)</param>
         /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="units">주문 수량 (BTC: 0.001 ~ 999.99999999 | ETH: 0.1 ~ 10,000)</param>
         /// <returns></returns>
-        public async Task<TradeMarket> MarketBuy(decimal units, string currency = "BTC")
+        public async Task<TradeMarket> MarketBuy(string currency, decimal units)
         {
             var _params = new Dictionary<string, object>();
             {
-                _params.Add("units", units);
                 _params.Add("currency", currency);
+                _params.Add("units", units);
             }
 
             return await TradeClient.CallApiPostAsync<TradeMarket>("/trade/market_buy", _params);
@@ -143,15 +143,15 @@ namespace Bithumb.API.Trade
         /// <summary>
         /// 시장가 판매
         /// </summary>
-        /// <param name="units">주문 수량 (BTC: 0.001 ~ 999.99999999 | ETH: 0.1 ~ 10,000)</param>
         /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="units">주문 수량 (BTC: 0.001 ~ 999.99999999 | ETH: 0.1 ~ 10,000)</param>
         /// <returns></returns>
-        public async Task<TradeMarket> MarketSell(decimal units, string currency = "BTC")
+        public async Task<TradeMarket> MarketSell(string currency, decimal units)
         {
             var _params = new Dictionary<string, object>();
             {
-                _params.Add("units", units);
                 _params.Add("currency", currency);
+                _params.Add("units", units);
             }
 
             return await TradeClient.CallApiPostAsync<TradeMarket>("/trade/market_sell", _params);
