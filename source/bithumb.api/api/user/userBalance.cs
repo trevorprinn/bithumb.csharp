@@ -13,7 +13,7 @@
             get;
             set;
         }
-        
+
         /// <summary>
         /// 전체 ETH
         /// </summary>
@@ -140,6 +140,67 @@
         public UserBalance()
         {
             this.data = new UserBalanceData();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string currency
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 전체 QTY
+        /// </summary>
+        public decimal total_qty
+        {
+            get
+            {
+                if (this.currency == "BTC")
+                    return this.data.total_btc;
+                return this.data.total_eth;
+            }
+        }
+
+        /// <summary>
+        /// 사용중 QTY
+        /// </summary>
+        public decimal in_use_qty
+        {
+            get
+            {
+                if (this.currency == "BTC")
+                    return this.data.in_use_btc;
+                return this.data.in_use_eth;
+            }
+        }
+
+        /// <summary>
+        /// 사용 가능 QTY
+        /// </summary>
+        public decimal available_qty
+        {
+            get
+            {
+                if (this.currency == "BTC")
+                    return this.data.available_btc;
+                return this.data.available_eth;
+            }
+        }
+
+        /// <summary>
+        /// 신용거래 QTY
+        /// </summary>
+        public decimal misu_qty
+        {
+            get
+            {
+                if (this.currency == "BTC")
+                    return this.data.misu_btc;
+                return this.data.misu_eth;
+            }
         }
     }
 }
