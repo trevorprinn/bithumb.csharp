@@ -8,8 +8,9 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Bithumb.Sample</RootNamespace>
     <AssemblyName>Bithumb.Sample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\bithumb.api\bithumb.api.csproj">
+    <ProjectReference Include="..\bithumb.api\bithumb.api.n47.csproj">
       <Project>{cbe9655b-659c-4b6f-bc62-889bd9212685}</Project>
-      <Name>bithumb.api</Name>
+      <Name>bithumb.api.n47</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
