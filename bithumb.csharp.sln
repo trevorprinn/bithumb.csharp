@@ -25,10 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logo-files", "logo-files", 
 		logo-files\bithumb.api.png = logo-files\bithumb.api.png
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{2AB7AC36-0345-4A25-89FB-707788D8A484}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdinSdk.BaseLib.C11", "..\..\..\odinsoft-git\public\open-sdk\source\OdinSdk.BaseLib.C11\OdinSdk.BaseLib.C11.csproj", "{0AB4BC01-8441-4043-8B94-CD275DB67921}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +47,6 @@ Global
 		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0AB4BC01-8441-4043-8B94-CD275DB67921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AB4BC01-8441-4043-8B94-CD275DB67921}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AB4BC01-8441-4043-8B94-CD275DB67921}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AB4BC01-8441-4043-8B94-CD275DB67921}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +56,5 @@ Global
 		{C847116C-4349-4279-8B2D-55E54A8D69DF} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
 		{CBE9655B-659C-4B6F-BC62-889BD9212685} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
 		{436CE132-5F05-4B76-8C7D-5FC9133F87F7} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
-		{0AB4BC01-8441-4043-8B94-CD275DB67921} = {2AB7AC36-0345-4A25-89FB-707788D8A484}
 	EndGlobalSection
 EndGlobal
