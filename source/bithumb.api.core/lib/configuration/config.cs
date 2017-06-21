@@ -1,8 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using OdinSdk.BaseLib.Cryption;
+﻿using Bithumb.LIB.Security;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections;
-using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -803,33 +802,33 @@ namespace Bithumb.LIB.Configuration
         //-----------------------------------------------------------------------------------------------------------------------------
         //
         //-----------------------------------------------------------------------------------------------------------------------------
-        private static bool? _runningFromNUnit = null;
+        //private static bool? _runningFromNUnit = null;
 
-        /// <summary>
-        /// Unit Test 중인지를 확인 합니다.
-        /// </summary>
-        public bool IsRunningFromNunit
-        {
-            get
-            {
-                if (_runningFromNUnit == null)
-                {
-                    _runningFromNUnit = false;
+        ///// <summary>
+        ///// Unit Test 중인지를 확인 합니다.
+        ///// </summary>
+        //public bool IsRunningFromNunit
+        //{
+        //    get
+        //    {
+        //        if (_runningFromNUnit == null)
+        //        {
+        //            _runningFromNUnit = false;
 
-                    const string _testAssemblyName = "Microsoft.VisualStudio.QualityTools.UnitTestFramework";
-                    foreach (Assembly _assembly in AppDomain.CurrentDomain.GetAssemblies())
-                    {
-                        if (_assembly.FullName.StartsWith(_testAssemblyName))
-                        {
-                            _runningFromNUnit = true;
-                            break;
-                        }
-                    }
-                }
+        //            const string _testAssemblyName = "Microsoft.VisualStudio.QualityTools.UnitTestFramework";
+        //            foreach (Assembly _assembly in AppDomain.CurrentDomain.GetAssemblies())
+        //            {
+        //                if (_assembly.FullName.StartsWith(_testAssemblyName))
+        //                {
+        //                    _runningFromNUnit = true;
+        //                    break;
+        //                }
+        //            }
+        //        }
 
-                return _runningFromNUnit.Value;
-            }
-        }
+        //        return _runningFromNUnit.Value;
+        //    }
+        //}
 
         /// <summary>
         /// SQL ConnectionString에 application name을 추가 합니다.
@@ -867,13 +866,13 @@ namespace Bithumb.LIB.Configuration
         {
             var _result = false;
 
-            WindowsIdentity _identity = WindowsIdentity.GetCurrent();
-            if (_identity != null)
-            {
+            //WindowsIdentity _identity = WindowsIdentity.GetCurrent();
+            //if (_identity != null)
+            //{
 
-                WindowsPrincipal principal = new WindowsPrincipal(_identity);
-                _result = principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
+            //    WindowsPrincipal principal = new WindowsPrincipal(_identity);
+            //    _result = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            //}
 
             return _result;
         }

@@ -11,6 +11,8 @@ namespace Bithumb.LIB.Configuration
     /// </summary>
     public class CRegistry
     {
+        private static CConfig __cconfig = new CConfig();
+
         //-------------------------------------------------------------------------------------------------------------------------
         // 
         //-------------------------------------------------------------------------------------------------------------------------
@@ -91,7 +93,7 @@ namespace Bithumb.LIB.Configuration
         {
             get
             {
-                return Environment.UserInteractive;
+                return __cconfig.IsWindows;
             }
         }
 
@@ -138,7 +140,7 @@ namespace Bithumb.LIB.Configuration
             var _regloc = RegistryKey.OpenBaseKey
                     (
                         SdkRegisryHive,
-                        Environment.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
+                        __cconfig.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
                     );
 
             if (String.IsNullOrEmpty(p_registry_root))
@@ -146,7 +148,7 @@ namespace Bithumb.LIB.Configuration
 
             var _result = _regloc.OpenSubKey(p_registry_root, true);
             if (_result == null)
-                _result = _regloc.CreateSubKey(p_registry_root, RegistryKeyPermissionCheck.ReadWriteSubTree);
+                _result = _regloc.CreateSubKey(p_registry_root, true);
 
             return _result;
         }
@@ -184,7 +186,7 @@ namespace Bithumb.LIB.Configuration
                 else
                     _result = _value.ToString();
 
-                _regkey.Close();
+                _regkey.Flush();
             }
 
             return _result;
@@ -202,7 +204,7 @@ namespace Bithumb.LIB.Configuration
             if (_regkey != null)
             {
                 _regkey.SetValue(p_regkey, p_value);
-                _regkey.Close();
+                _regkey.Flush();
             }
         }
 
@@ -219,7 +221,7 @@ namespace Bithumb.LIB.Configuration
 
             if (String.IsNullOrEmpty(_result) == true)
             {
-                _result = ConfigurationManager.AppSettings[p_appkey];
+                _result = __cconfig.GetAppString(p_appkey);
 
                 if (String.IsNullOrEmpty(_result) == false)
                     SetRegValue(p_appkey, _result, p_registry_root);
@@ -325,7 +327,7 @@ namespace Bithumb.LIB.Configuration
             var _regloc = RegistryKey.OpenBaseKey
                     (
                         RegistryHive.LocalMachine,
-                        Environment.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
+                        __cconfig.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
                     );
 
             var _ndpKey = _regloc.OpenSubKey(RegistryNDP);
@@ -335,16 +337,15 @@ namespace Bithumb.LIB.Configuration
             return _result;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public string GetFrameworkVersion()
-        {
-            // Retrieve the version of the framework executing this program
-            return String.Format(@"v{0}.{1}.{2}", Environment.Version.Major, Environment.Version.Minor, Environment.Version.Build);
-        }
-
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <returns></returns>
+        //public string GetFrameworkVersion()
+        //{
+        //    // Retrieve the version of the framework executing this program
+        //    return String.Format(@"v{0}.{1}.{2}", Environment.Version.Major, Environment.Version.Minor, Environment.Version.Build);
+        //}
 
         /// <summary>
         /// 
@@ -358,7 +359,7 @@ namespace Bithumb.LIB.Configuration
             var _regloc = RegistryKey.OpenBaseKey
             (
                 RegistryHive.LocalMachine,
-                Environment.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
+                __cconfig.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
             );
 
             // Get a non-writable key from the registry
@@ -384,7 +385,7 @@ namespace Bithumb.LIB.Configuration
             var _regloc = RegistryKey.OpenBaseKey
             (
                 RegistryHive.LocalMachine,
-                Environment.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
+                __cconfig.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
             );
 
             /*
@@ -452,17 +453,17 @@ namespace Bithumb.LIB.Configuration
                 RegistryView.Registry32
             );
 
-            using (RegistryKey _regkey = _regloc.OpenSubKey(_uninstall_key))
+            using (var _regkey = _regloc.OpenSubKey(_uninstall_key))
             {
                 foreach (string _name in _regkey.GetSubKeyNames())
                 {
-                    using (RegistryKey _key = _regkey.OpenSubKey(_name))
+                    using (var _key = _regkey.OpenSubKey(_name))
                     {
                         var _value = _key.GetValue("DisplayName");
                         if (_value == null)
                             continue;
 
-                        if (String.Compare(_value.ToString(), 0, displayName, 0, displayName.Length, true) == 0)
+                        if (String.Compare(_value.ToString(), 0, displayName, 0, displayName.Length) == 0)
                         {
                             _result = true;
                             break;
@@ -493,7 +494,7 @@ namespace Bithumb.LIB.Configuration
             var _regloc = RegistryKey.OpenBaseKey
             (
                 RegistryHive.LocalMachine,
-                Environment.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
+                __cconfig.Is64BitOperatingSystem == true ? RegistryView.Registry64 : RegistryView.Registry32
             );
 
             if (_regloc != null)

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Bithumb.LIB.Serialize;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using Bithumb.LIB.Serialize;
-using RestSharp;
 
 namespace Bithumb.LIB
 {
@@ -20,8 +19,8 @@ namespace Bithumb.LIB
         /// </summary>
         public OWebRequest()
         {
-            if (ServicePointManager.ServerCertificateValidationCallback == null)
-                ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+            //if (ServicePointManager.ServerCertificateValidationCallback == null)
+            //    ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
         }
 
         private static char[] __to_digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };

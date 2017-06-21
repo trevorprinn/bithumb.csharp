@@ -105,7 +105,7 @@ namespace Bithumb.LIB.Configuration
             finally
             {
                 if (_fs != null)
-                    _fs.Close();
+                    _fs.Dispose();
             }
         }
 
