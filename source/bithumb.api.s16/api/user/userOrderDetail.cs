@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bithumb.API.Info
+namespace Bithumb.API.User
 {
     /// <summary>
     /// 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bithumb.API.Info
+namespace Bithumb.API.User
 {
     /// <summary>
     /// 회원 거래 내역

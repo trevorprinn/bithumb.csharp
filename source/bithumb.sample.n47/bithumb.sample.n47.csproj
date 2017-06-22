@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\bithumb.api\bithumb.api.n47.csproj">
+    <ProjectReference Include="..\bithumb.api.n47\bithumb.api.n47.csproj">
       <Project>{cbe9655b-659c-4b6f-bc62-889bd9212685}</Project>
       <Name>bithumb.api.n47</Name>
     </ProjectReference>

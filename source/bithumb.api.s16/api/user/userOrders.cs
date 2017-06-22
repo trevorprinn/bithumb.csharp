@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Bithumb.API.Info
+namespace Bithumb.API.User
 {
     /// <summary>
     /// 

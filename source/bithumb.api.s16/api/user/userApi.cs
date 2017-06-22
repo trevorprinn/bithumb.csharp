@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Bithumb.API.Info
+namespace Bithumb.API.User
 {
     /// <summary>
     /// https://api.bithumb.com/

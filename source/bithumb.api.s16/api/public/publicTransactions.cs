@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Bithumb.LIB.Configuration;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Bithumb.LIB.Configuration;
-using Bithumb.LIB.Queue;
-using Bithumb.LIB.Types;
-using Newtonsoft.Json;
 
 namespace Bithumb.API.Public
 {
@@ -82,26 +80,6 @@ namespace Bithumb.API.Public
         {
             get;
             set;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public TradeHistory ToQueue(CoinType coinType = CoinType.btc, CurrencyType currencyType = CurrencyType.krw)
-        {
-            return new TradeHistory
-            {
-                amount = this.units_traded,
-                coin = coinType,
-                currency = currencyType,
-                dealer = DealerType.xcoin,
-                price = this.price,
-                tid = this.transaction_date,
-                timestamp = this.transaction_date * 1000L,
-                total = this.total,
-                type = (this.type == "ask") ? OrderType.sell : OrderType.buy
-            };
         }
     }
 

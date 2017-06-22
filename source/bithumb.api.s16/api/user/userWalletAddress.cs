@@ -1,4 +1,4 @@
-﻿namespace Bithumb.API.Info
+﻿namespace Bithumb.API.User
 {
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26606.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bithumb.sample.c11", "source\bithumb.sample.core\bithumb.sample.c11.csproj", "{F90E350F-7774-4987-B095-7C2731F0C2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bithumb.sample.c11", "source\bithumb.sample.c11\bithumb.sample.c11.csproj", "{F90E350F-7774-4987-B095-7C2731F0C2C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE36102D-AC13-4DED-802B-F265CB1DEE53}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,11 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bithumb.api.s16", "source\bithumb.api.core\bithumb.api.s16.csproj", "{C847116C-4349-4279-8B2D-55E54A8D69DF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bithumb.api.n47", "source\bithumb.api\bithumb.api.n47.csproj", "{CBE9655B-659C-4B6F-BC62-889BD9212685}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bithumb.sample.n47", "source\bithumb.sample\bithumb.sample.n47.csproj", "{436CE132-5F05-4B76-8C7D-5FC9133F87F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bithumb.api.s16", "source\bithumb.api.s16\bithumb.api.s16.csproj", "{C847116C-4349-4279-8B2D-55E54A8D69DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}"
 EndProject
@@ -39,14 +35,6 @@ Global
 		{C847116C-4349-4279-8B2D-55E54A8D69DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C847116C-4349-4279-8B2D-55E54A8D69DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C847116C-4349-4279-8B2D-55E54A8D69DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBE9655B-659C-4B6F-BC62-889BD9212685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBE9655B-659C-4B6F-BC62-889BD9212685}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBE9655B-659C-4B6F-BC62-889BD9212685}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBE9655B-659C-4B6F-BC62-889BD9212685}.Release|Any CPU.Build.0 = Release|Any CPU
-		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{436CE132-5F05-4B76-8C7D-5FC9133F87F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,7 +42,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F90E350F-7774-4987-B095-7C2731F0C2C7} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
 		{C847116C-4349-4279-8B2D-55E54A8D69DF} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
-		{CBE9655B-659C-4B6F-BC62-889BD9212685} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
-		{436CE132-5F05-4B76-8C7D-5FC9133F87F7} = {EFFFF510-E675-4A31-B7AD-2EA3A7E60DAA}
 	EndGlobalSection
 EndGlobal
