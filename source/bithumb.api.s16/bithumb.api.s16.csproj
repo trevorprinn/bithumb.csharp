@@ -45,8 +45,4 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="lib\security\" />
-  </ItemGroup>
-
 </Project>

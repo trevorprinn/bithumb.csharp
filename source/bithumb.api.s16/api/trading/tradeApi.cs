@@ -33,7 +33,7 @@ namespace XCT.BaseLib.API.Bithumb.Trade
         }
 
         /// <summary>
-        /// bithumb 회원 판/구매 거래 주문 등록 및 체결
+        /// bithumb 회원 판/구매 거래 주문 등록 및 체결 (미수 주문등록 및 체결은 현 API에서 지원 안 함)
         /// </summary>
         /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 최대 수량 (BTC: 300 | ETH: 2,500 | DASH: 4,000 | LTC: 15,000 | ETC: 30,000 | XRP: 2,500,000)</param>
         /// <param name="price">1Currency당 거래금액 (BTC, ETH, DASH, LTC, ETC, XRP)</param>

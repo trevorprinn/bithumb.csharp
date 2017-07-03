@@ -1,11 +1,11 @@
-﻿namespace XCT.BaseLib.API
+﻿namespace XCT.BaseLib.API.Bithumb
 {
     /// <summary>
     /// 
     /// </summary>
-    public class XApiResult
+    public class BApiResult
     {
-        public XApiResult()
+        public BApiResult()
         {
             this.status = -1;
             this.message = "";
@@ -33,7 +33,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public class ApiResult<T> : XApiResult
+    public class ApiResult<T> : BApiResult
     {
         /// <summary>
         /// data
