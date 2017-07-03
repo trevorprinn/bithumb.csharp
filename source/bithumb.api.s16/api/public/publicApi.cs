@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Bithumb.API.Public
+namespace XCT.BaseLib.API.Bithumb.Public
 {
     /// <summary>
     /// https://api.bithumb.com/
     /// </summary>
-    public class XPublicApi
+    public class BPublicApi
     {
         private string __connect_key;
         private string __secret_key;
@@ -15,27 +15,27 @@ namespace Bithumb.API.Public
         /// <summary>
         /// 
         /// </summary>
-        public XPublicApi()
+        public BPublicApi()
         {
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public XPublicApi(string connect_key, string secret_key)
+        public BPublicApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
         }
 
-        private XApiClient __public_client = null;
+        private BithumbClient __public_client = null;
 
-        private XApiClient PublicClient
+        private BithumbClient PublicClient
         {
             get
             {
                 if (__public_client == null)
-                    __public_client = new XApiClient(__connect_key, __secret_key);
+                    __public_client = new BithumbClient(__connect_key, __secret_key);
                 return __public_client;
             }
         }
@@ -43,7 +43,7 @@ namespace Bithumb.API.Public
         /// <summary>
         /// bithumb 거래소 마지막 거래 정보
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)</param>
         /// <returns></returns>
         public async Task<PublicTicker> Ticker(string currency)
         {
@@ -53,7 +53,7 @@ namespace Bithumb.API.Public
         /// <summary>
         /// bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)</param>
         /// <param name="group_orders">Value : 0 또는 1 (Default : 1)</param>
         /// <param name="count">Value : 1 ~ 50 (Default : 20)</param>
         /// <returns></returns>
@@ -71,7 +71,7 @@ namespace Bithumb.API.Public
         /// <summary>
         /// bithumb 거래소 거래 체결 완료 내역
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="offset">Value : 0 ~ (Default : 0)</param>
         /// <param name="count">Value : 1 ~ 100 (Default : 20)</param>
         /// <returns></returns>

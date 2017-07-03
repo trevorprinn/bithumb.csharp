@@ -1,4 +1,4 @@
-﻿namespace Bithumb.API.User
+﻿namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// 
@@ -72,24 +72,6 @@
         /// 최근 7일간 BTC 거래량
         /// </summary>
         public decimal? volume_7day
-        {
-            get;
-            set;
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? buy_price
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? sell_price
         {
             get;
             set;

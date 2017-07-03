@@ -1,25 +1,25 @@
-﻿using Bithumb.LIB.Configuration;
-using Bithumb.LIB.Serialize;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Configuration;
+using OdinSdk.BaseLib.Serialize;
 using RestSharp;
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bithumb.API
+namespace XCT.BaseLib.API
 {
     /// <summary>
     /// 
     /// </summary>
     public class XApiClient : IDisposable
     {
-        private const string __api_url = "https://api.bithumb.com";
+        private string __api_url = "";
 
-        private string __connect_key;
-        private string __secret_key;
+        protected string __connect_key;
+        protected string __secret_key;
 
         private const string __content_type = "application/json";
         private const string __user_agent = "btc-trading/5.2.2017.01";
@@ -27,16 +27,16 @@ namespace Bithumb.API
         /// <summary>
         /// 
         /// </summary>
-        public XApiClient(string connect_key, string secret_key)
-            : base()
+        public XApiClient(string api_url, string connect_key, string secret_key)
         {
+            __api_url = api_url;
             __connect_key = connect_key;
             __secret_key = secret_key;
         }
 
         private static char[] __to_digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-        protected byte[] EncodeHex(byte[] data)
+        public byte[] EncodeHex(byte[] data)
         {
             int l = data.Length;
             byte[] _result = new byte[l << 1];
@@ -51,7 +51,7 @@ namespace Bithumb.API
             return _result;
         }
 
-        protected string EncodeURIComponent(Dictionary<string, object> rgData)
+        public string EncodeURIComponent(Dictionary<string, object> rgData)
         {
             string _result = String.Join("&", rgData.Select((x) => String.Format("{0}={1}", x.Key, x.Value)));
 
@@ -64,7 +64,7 @@ namespace Bithumb.API
             return _result;
         }
 
-        protected IRestClient CreateJsonClient(string baseurl)
+        public IRestClient CreateJsonClient(string baseurl)
         {
             var _client = new RestClient(baseurl);
             {
@@ -77,7 +77,7 @@ namespace Bithumb.API
             return _client;
         }
 
-        protected IRestRequest CreateJsonRequest(string resource, Method method = Method.GET)
+        public IRestRequest CreateJsonRequest(string resource, Method method = Method.GET)
         {
             var _request = new RestRequest(resource, method)
             {
@@ -88,9 +88,9 @@ namespace Bithumb.API
             return _request;
         }
 
-        protected Dictionary<string, object> GetHttpHeaders(string endpoint, Dictionary<string, object> rgData, string apiKey, string apiSecret)
+        public Dictionary<string, object> GetHttpHeaders(string endpoint, Dictionary<string, object> rgData, string apiKey, string apiSecret)
         {
-            var _nonce = UnixTime.NowMilli.ToString();
+            var _nonce = CUnixTime.NowMilli.ToString();
             var _data = EncodeURIComponent(rgData);
             var _message = String.Format("{0};{1};{2}", endpoint, _data, _nonce);
 
@@ -134,8 +134,6 @@ namespace Bithumb.API
                             _params.Add(a.Key, a.Value);
                     }
                 }
-
-                _request.AddHeader("api-client-type", "2");
 
                 var _headers = GetHttpHeaders(endpoint, _params, __connect_key, __secret_key);
                 foreach (var h in _headers)

@@ -1,13 +1,15 @@
-﻿using Bithumb.LIB.Configuration;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Bithumb.API.Public
+namespace XCT.BaseLib.API.Bithumb.Public
 {
     /// <summary>
-    /// 
+    /// https://api.bithumb.com/public/recent_transactions/{currency}
+    /// bithumb 거래소 거래 체결 완료 내역
+    /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)
     /// </summary>
     public class PublicTransactionData
     {
@@ -22,10 +24,10 @@ namespace Bithumb.API.Public
         [JsonConstructor]
         public PublicTransactionData(string transaction_date, string type, string units_traded, string price, string total)
         {
-            if (UnixTime.IsDateTimeFormat(transaction_date) == true)
+            if (CUnixTime.IsDateTimeFormat(transaction_date) == true)
             {
-                var _tdate = UnixTime.ConvertToUtcTime(transaction_date + "+09:00");
-                this.transaction_date = UnixTime.ConvertToUnixTimeMilli(_tdate);
+                var _tdate = CUnixTime.ConvertToUtcTime(transaction_date + "+09:00");
+                this.transaction_date = CUnixTime.ConvertToUnixTimeMilli(_tdate);
             }
             else
                 this.transaction_date = Convert.ToInt64(transaction_date);
@@ -55,7 +57,7 @@ namespace Bithumb.API.Public
         }
 
         /// <summary>
-        /// 거래 Currency 수량 (BTC or ETH)
+        /// 거래 Currency 수량
         /// </summary>
         public decimal units_traded
         {
@@ -64,7 +66,7 @@ namespace Bithumb.API.Public
         }
 
         /// <summary>
-        /// 1Currency 거래 금액 (BTC or ETH)
+        /// 1Currency당 거래금액 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal price
         {

@@ -34,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="OdinSdk.BaseLib">
+      <HintPath>..\..\..\..\..\odinsoft-git\public\open-sdk\source\OdinSdk.BaseLib.S16\bin\Debug\netstandard1.6\OdinSdk.BaseLib.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7\System.Configuration.dll</HintPath>
     </Reference>

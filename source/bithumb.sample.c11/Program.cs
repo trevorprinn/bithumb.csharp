@@ -1,7 +1,7 @@
-﻿using Bithumb.API.Public;
-using Bithumb.API.Trade;
-using Bithumb.API.User;
-using System;
+﻿using System;
+using XCT.BaseLib.API.Bithumb.Public;
+using XCT.BaseLib.API.Bithumb.Trade;
+using XCT.BaseLib.API.Bithumb.User;
 
 namespace Bithumb.Sample.Core
 {
@@ -12,7 +12,7 @@ namespace Bithumb.Sample.Core
         /// </summary>
         public static async void XPublicApi()
         {
-            var _public_api = new XPublicApi();
+            var _public_api = new BPublicApi();
 
             var _ticker = await _public_api.Ticker("ETH");
             if (_ticker.status == 0)
@@ -32,7 +32,7 @@ namespace Bithumb.Sample.Core
         /// </summary>
         public static async void XInfoApi()
         {
-            var __info_api = new XUserApi("connect-key", "secret-key");
+            var __info_api = new BUserApi("connect-key", "secret-key");
 
             var _account = await __info_api.Account("ETH");
             if (_account.status == 0)
@@ -68,7 +68,7 @@ namespace Bithumb.Sample.Core
         /// </summary>
         public static async void XTradeApi()
         {
-            var __trade_api = new XTradeApi("connect-key", "secret-key");
+            var __trade_api = new BTradeApi("connect-key", "secret-key");
 
             var _place = await __trade_api.Place(0.1m, 60000, "ask", "ETH");
             if (_place.status == 0)

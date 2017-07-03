@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Bithumb.API.User
+namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// 
@@ -18,7 +18,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 주문 화페단위 (BTC or ETH)
+        /// 주문 화페단위
         /// </summary>
         public string order_currency
         {
@@ -63,7 +63,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 거래요청 Currency (BTC or ETH)
+        /// 거래요청 Currency (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal units
         {
@@ -82,7 +82,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 1BTC당 거래금액
+        /// 1Currency당 체결가 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal price
         {

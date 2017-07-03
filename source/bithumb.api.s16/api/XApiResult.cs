@@ -1,4 +1,4 @@
-﻿namespace Bithumb.API
+﻿namespace XCT.BaseLib.API
 {
     /// <summary>
     /// 

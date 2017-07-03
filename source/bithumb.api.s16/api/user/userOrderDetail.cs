@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bithumb.API.User
+namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// 
@@ -26,7 +26,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// BTC or ETH
+        /// BTC, ETH, DASH, LTC, ETC, XRP
         /// </summary>
         public string order_currency
         {
@@ -53,7 +53,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 1Currency당 체결가 (BTC or ETH)
+        /// 1Currency당 체결가 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal price
         {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bithumb.API.Trade
+namespace XCT.BaseLib.API.Bithumb.Trade
 {
     /// <summary>
     /// 시장가 구매
@@ -26,7 +26,7 @@ namespace Bithumb.API.Trade
         }
 
         /// <summary>
-        /// 1Currency당 KRW 시세 (BTC or ETH)
+        /// 1Currency당 체결가 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal price
         {

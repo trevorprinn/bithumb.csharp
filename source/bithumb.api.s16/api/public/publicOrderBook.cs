@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Bithumb.API.Public
+namespace XCT.BaseLib.API.Bithumb.Public
 {
     /// <summary>
-    /// 
+    /// https://api.bithumb.com/public/orderbook/{currency}
+    /// bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
+    /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)
     /// </summary>
     public class PublicOrderBookData
     {
         /// <summary>
-        /// Currency 수량 (BTC or ETH)
+        /// Currency 수량
         /// </summary>
         public decimal quantity
         {
@@ -19,7 +21,7 @@ namespace Bithumb.API.Public
         }
 
         /// <summary>
-        /// 1Currency당 거래금액 (BTC or ETH)
+        /// 1Currency당 거래금액
         /// </summary>
         public decimal price
         {

@@ -1,4 +1,6 @@
-﻿namespace Bithumb.API.User
+﻿using XCT.BaseLib.API;
+
+namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
@@ -33,7 +35,7 @@
         }
 
         /// <summary>
-        /// Currency 잔액 (BTC or ETH)
+        /// 1Currency 잔액 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public decimal balance
         {

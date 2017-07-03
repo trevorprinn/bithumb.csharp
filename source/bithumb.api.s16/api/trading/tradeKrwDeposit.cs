@@ -1,4 +1,4 @@
-﻿namespace Bithumb.API.Trade
+﻿namespace XCT.BaseLib.API.Bithumb.Trade
 {
     /// <summary>
     /// bithumb 회원 btc 출금(회원등급에 따른 BTC 출금)

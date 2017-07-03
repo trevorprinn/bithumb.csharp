@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bithumb.API.User
+namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// 회원 거래 내역
@@ -17,7 +17,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 거래 일시 Timestamp (완료일자)
+        /// 거래 일시 Timestamp
         /// </summary>
         public long transfer_date
         {
@@ -26,7 +26,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 거래 Currency 수량 (BTC or ETH)
+        /// 거래 Currency 수량 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
         public string units
         {
@@ -44,7 +44,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 1Currency당 거래금액 (KRW)
+        /// 1Currency당 거래금액 (btc, eth, dash, ltc, etc, xrp)
         /// </summary>
         public decimal btc1krw
         {
@@ -52,10 +52,31 @@ namespace Bithumb.API.User
             set;
         }
 
-        /// <summary>
-        /// 1Currency당 거래금액 (ETH)
-        /// </summary>
         public decimal eth1krw
+        {
+            get;
+            set;
+        }
+
+        public decimal dash1krw
+        {
+            get;
+            set;
+        }
+
+        public decimal ltc1krw
+        {
+            get;
+            set;
+        }
+
+        public decimal etc1krw
+        {
+            get;
+            set;
+        }
+
+        public decimal xrp1krw
         {
             get;
             set;
@@ -71,7 +92,7 @@ namespace Bithumb.API.User
         }
 
         /// <summary>
-        /// 거래 후 BTC 잔액
+        /// 거래 후 Currency 잔액 (btc, eth, dash, ltc, etc, xrp)
         /// </summary>
         public decimal btc_remain
         {
@@ -79,10 +100,31 @@ namespace Bithumb.API.User
             set;
         }
 
-        /// <summary>
-        /// 거래 후 ETH 잔액
-        /// </summary>
         public decimal eth_remain
+        {
+            get;
+            set;
+        }
+
+        public decimal dash_remain
+        {
+            get;
+            set;
+        }
+
+        public decimal ltc_remain
+        {
+            get;
+            set;
+        }
+
+        public decimal etc_remain
+        {
+            get;
+            set;
+        }
+
+        public decimal xrp_remain
         {
             get;
             set;

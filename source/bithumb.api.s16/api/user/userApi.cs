@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Bithumb.API.User
+namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// https://api.bithumb.com/
     /// </summary>
-    public class XUserApi
+    public class BUserApi
     {
         private string __connect_key;
         private string __secret_key;
@@ -14,20 +14,20 @@ namespace Bithumb.API.User
         /// <summary>
         /// 
         /// </summary>
-        public XUserApi(string connect_key, string secret_key)
+        public BUserApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
         }
 
-        private XApiClient __user_client = null;
+        private BithumbClient __user_client = null;
 
-        private XApiClient UserClient
+        private BithumbClient UserClient
         {
             get
             {
                 if (__user_client == null)
-                    __user_client = new XApiClient(__connect_key, __secret_key);
+                    __user_client = new BithumbClient(__connect_key, __secret_key);
                 return __user_client;
             }
         }
@@ -35,7 +35,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// bithumb 거래소 회원 정보
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
         public async Task<UserAccount> Account(string currency)
         {
@@ -50,7 +50,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// bithumb 거래소 회원 지갑 정보
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
         public async Task<UserBalance> Balance(string currency)
         {
@@ -65,7 +65,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// bithumb 거래소 회원 입금 주소
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
         public async Task<UserWalletAddress> WalletAddress(string currency)
         {
@@ -80,7 +80,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// 회원 마지막 거래 정보
         /// </summary>
-        /// <param name="order_currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="order_currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="payment_currency">KRW (현재 bithumb에서 제공하는 통화 KRW)</param>
         /// <returns></returns>
         public async Task<UserTicker> Ticker(string order_currency, string payment_currency = "KRW")
@@ -97,7 +97,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// 판/구매 거래 주문 등록 또는 진행 중인 거래
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
         /// <param name="type">거래유형(bid : 구매, ask : 판매)</param>
         /// <param name="count">Value : 1 ~1000 (default : 100)</param>
@@ -120,7 +120,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// 회원 거래 내역
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="offset">Value : 0 ~ (default : 0)</param>
         /// <param name="count">Value : 1 ~ 50 (default : 20)</param>
         /// <param name="searchGb">	0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중</param>
@@ -141,7 +141,7 @@ namespace Bithumb.API.User
         /// <summary>
         /// bithumb 회원 판/구매 체결 내역
         /// </summary>
-        /// <param name="currency">BTC, ETH (기본값: BTC)</param>
+        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
         /// <param name="type">거래유형 (bid : 구매, ask : 판매)</param>
         /// <returns></returns>

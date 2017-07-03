@@ -1,4 +1,4 @@
-﻿namespace Bithumb.API.User
+﻿namespace XCT.BaseLib.API.Bithumb.User
 {
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// BTC or ETH
+        /// BTC, ETH, DASH, LTC, ETC, XRP
         /// </summary>
         public string currency
         {

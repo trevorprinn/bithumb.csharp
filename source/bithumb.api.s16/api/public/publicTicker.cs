@@ -1,7 +1,9 @@
-﻿namespace Bithumb.API.Public
+﻿namespace XCT.BaseLib.API.Bithumb.Public
 {
     /// <summary>
-    /// 
+    /// https://api.bithumb.com/public/ticker/{currency}
+    /// bithumb 거래소 마지막 거래 정보
+    /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)
     /// </summary>
     public class PublicTickerData
     {
@@ -72,6 +74,25 @@
         /// 최근 7일간 BTC 거래량
         /// </summary>
         public decimal volume_7day
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// 거래 대기건 최고 구매가
+        /// </summary>
+        public decimal buy_price
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 대기건 최소 판매가
+        /// </summary>
+        public decimal sell_price
         {
             get;
             set;
