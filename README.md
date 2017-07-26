@@ -1,4 +1,4 @@
-# Bithumb C# API SDK
+# Bithumb C# API SDK [![Build status](https://ci.appveyor.com/api/projects/status/dnp9i3t6sexv9tpa?svg=true)](https://ci.appveyor.com/project/lisa3907/bithumb-csharp)
 
 This SDK is intended to develop bithumb's API for bitcoin/ethereum trading with C#.
 
