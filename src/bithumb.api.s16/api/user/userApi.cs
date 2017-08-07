@@ -52,7 +52,7 @@ namespace XCT.BaseLib.API.Bithumb.User
         /// </summary>
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<UserBalance> Balance(string currency)
+        public async Task<UserBalance> Balance(string currency = "ALL")
         {
             var _params = new Dictionary<string, object>();
             {

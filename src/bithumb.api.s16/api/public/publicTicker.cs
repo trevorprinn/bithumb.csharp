@@ -121,6 +121,16 @@
 
     public class PublicTickerAll
     {
+        public PublicTickerAll()
+        {
+            BTC = new PublicTickerData();
+            ETH = new PublicTickerData();
+            DASH = new PublicTickerData();
+            LTC = new PublicTickerData();
+            ETC = new PublicTickerData();
+            XRP = new PublicTickerData();
+        }
+
         /// <summary>
         /// BitCoin
         /// </summary>

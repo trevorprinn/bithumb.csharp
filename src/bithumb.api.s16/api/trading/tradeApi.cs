@@ -84,14 +84,15 @@ namespace XCT.BaseLib.API.Bithumb.Trade
         /// <param name="address">Currency 출금 주소 (BTC, ETH, DASH, LTC, ETC, XRP)</param>
         /// <param name="destination">Currency 출금 Destination Tag (XRP 출금시)</param>
         /// <returns></returns>
-        public async Task<TradeWithdrawal> BtcWithdrawal(string currency, decimal units, string address, string destination = "")
+        public async Task<TradeWithdrawal> BtcWithdrawal(string currency, decimal units, string address, string destination = null)
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency);
                 _params.Add("units", units);
                 _params.Add("address", address);
-                _params.Add("destination", destination);
+                if (destination != null)
+                    _params.Add("destination", destination);
             }
 
             return await TradeClient.CallApiPostAsync<TradeWithdrawal>("/trade/btc_withdrawal", _params);

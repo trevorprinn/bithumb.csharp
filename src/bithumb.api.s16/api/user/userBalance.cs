@@ -353,6 +353,9 @@
 
             switch (coin_name.ToUpper())
             {
+                case "KRW":
+                    _result = this.data.available_krw;
+                    break;
                 case "BTC":
                     _result = this.data.available_btc;
                     break;
