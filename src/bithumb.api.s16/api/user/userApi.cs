@@ -62,6 +62,16 @@ namespace XCT.BaseLib.API.Bithumb.User
             return await UserClient.CallApiPostAsync<UserBalance>("/info/balance", _params);
         }
 
+        // For testing in LinqPad, returns the raw JSON
+        internal async Task<string> BalanceRaw(string currency = "ALL") {
+            var _params = new Dictionary<string, object>();
+            {
+                _params.Add("currency", currency);
+            }
+
+            return await UserClient.CallApiPostRawAsync("/info/balance", _params);
+        }
+
         /// <summary>
         /// bithumb 거래소 회원 입금 주소
         /// </summary>

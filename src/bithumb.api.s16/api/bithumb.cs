@@ -93,5 +93,41 @@ namespace XCT.BaseLib.API.Bithumb
                 return JsonConvert.DeserializeObject<T>(_response.Content);
             }
         }
+
+        // For testing in LinqPad, returns the raw JSON reply
+        internal async Task<string> CallApiPostRawAsync(string endpoint, Dictionary<string, object> args = null) {
+            var _request = CreateJsonRequest(endpoint, Method.POST);
+            {
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("endpoint", endpoint);
+                    if (args != null) {
+                        foreach (var a in args)
+                            _params.Add(a.Key, a.Value);
+                    }
+                }
+
+                _request.AddHeader("api-client-type", "2");
+
+                var _headers = GetHttpHeaders(endpoint, _params, __connect_key, __secret_key);
+                foreach (var h in _headers)
+                    _request.AddHeader(h.Key, h.Value.ToString());
+
+                foreach (var a in _params)
+                    _request.AddParameter(a.Key, a.Value);
+            }
+
+            var _client = CreateJsonClient(__api_url);
+            {
+                var _tcs = new TaskCompletionSource<IRestResponse>();
+                var _handle = _client.ExecuteAsync(_request, response => {
+                    _tcs.SetResult(response);
+                });
+
+                var _response = await _tcs.Task;
+                return _response.Content;
+            }
+
+        }
     }
 }
